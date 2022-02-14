@@ -12,16 +12,16 @@
 
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct Version {
-    /// Version is the service's version.
-    #[serde(rename = "version", skip_serializing_if = "Option::is_none")]
-    pub version: Option<String>,
+pub struct InlineResponse2001 {
+    /// The version of Ory Oathkeeper.
+    #[serde(rename = "version")]
+    pub version: String,
 }
 
-impl Version {
-    pub fn new() -> Version {
-        Version {
-            version: None,
+impl InlineResponse2001 {
+    pub fn new(version: String) -> InlineResponse2001 {
+        InlineResponse2001 {
+            version,
         }
     }
 }

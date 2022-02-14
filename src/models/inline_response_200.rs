@@ -12,16 +12,16 @@
 
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct Version {
-    /// Version is the service's version.
-    #[serde(rename = "version", skip_serializing_if = "Option::is_none")]
-    pub version: Option<String>,
+pub struct InlineResponse200 {
+    /// Always \"ok\".
+    #[serde(rename = "status")]
+    pub status: String,
 }
 
-impl Version {
-    pub fn new() -> Version {
-        Version {
-            version: None,
+impl InlineResponse200 {
+    pub fn new(status: String) -> InlineResponse200 {
+        InlineResponse200 {
+            status,
         }
     }
 }
