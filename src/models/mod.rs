@@ -1,9 +1,9 @@
+pub mod generic_error;
+pub use self::generic_error::GenericError;
 pub mod health_not_ready_status;
 pub use self::health_not_ready_status::HealthNotReadyStatus;
 pub mod health_status;
 pub use self::health_status::HealthStatus;
-pub mod inline_response_500;
-pub use self::inline_response_500::InlineResponse500;
 pub mod json_web_key;
 pub use self::json_web_key::JsonWebKey;
 pub mod json_web_key_set;
