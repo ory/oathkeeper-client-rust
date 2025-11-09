@@ -12,16 +12,16 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct HealthStatus {
-    /// Status always contains \"ok\".
-    #[serde(rename = "status", skip_serializing_if = "Option::is_none")]
-    pub status: Option<String>,
+pub struct IsAlive200Response {
+    /// Always \"ok\".
+    #[serde(rename = "status")]
+    pub status: String,
 }
 
-impl HealthStatus {
-    pub fn new() -> HealthStatus {
-        HealthStatus {
-            status: None,
+impl IsAlive200Response {
+    pub fn new(status: String) -> IsAlive200Response {
+        IsAlive200Response {
+            status,
         }
     }
 }

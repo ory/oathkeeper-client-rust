@@ -1,15 +1,15 @@
 [package]
 name = "ory-oathkeeper-client"
-version = "0.40.8"
-authors = ["hi@ory.am"]
-description = "ORY Oathkeeper is a reverse proxy that checks the HTTP Authorization for validity against a set of rules. This service uses Hydra to validate access tokens and policies."
-# Override this license by providing a License Object in the OpenAPI.
-license = "Unlicense"
+version = "25.4.0"
+authors = ["hi@ory.sh"]
+description = "OpenAPI API client for Ory Oathkeeper, a cloud native Identity & Access Proxy and Access Control Decision API that authenticates, authorizes, and mutates incoming HTTP(s) requests."
+license = "Apache-2.0"
 edition = "2021"
 
 [dependencies]
 serde = { version = "^1.0", features = ["derive"] }
+serde_with = { version = "^3.8", default-features = false, features = ["base64", "std", "macros"] }
 serde_json = "^1.0"
+serde_repr = "^0.1"
 url = "^2.5"
-uuid = { version = "^1.8", features = ["serde", "v4"] }
-reqwest = { version = "^0.12", features = ["json", "multipart"] }
+reqwest = { version = "^0.12", default-features = false, features = ["json", "multipart"] }
